@@ -26,7 +26,9 @@ void lerLista(){
     {
         fscanf(f, "%[^,],%d,%f", &item[i].nome, &item[i].qtd, &item[i].valor); // [^,] --> para ler ate encontrar virgula
         printf("%s: %d * %.2f = %.2f\n", item[i].nome, item[i].qtd, item[i].valor, item[i].qtd*item[i].valor);
+        valorFinal += (item[i].qtd*item[i].valor);
     }
+    printf("O valor total da compra e: RS%.2f", valorFinal);
     
        
     fclose(f);
