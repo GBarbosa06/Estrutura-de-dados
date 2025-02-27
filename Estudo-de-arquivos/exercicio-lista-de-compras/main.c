@@ -4,14 +4,15 @@
 void lerLista(){
     FILE *f;
     f = fopen("lista.csv", "r");
+    char lixo[100];
+
     if (f==NULL)
     {
         printf("Erro");
         exit(1);
     }
 
-    char lixo[100];
-    fscanf(f, "%s", &lixo);
+    fscanf(f, "%s", &lixo); //descartar a primeira linha 
 
     typedef struct
     {
@@ -29,13 +30,11 @@ void lerLista(){
         valorFinal += (item[i].qtd*item[i].valor);
     }
     printf("O valor total da compra e: RS%.2f", valorFinal);
-    
        
     fclose(f);
 }
 
 int main() {
     lerLista();
-
     return 0;
 }
