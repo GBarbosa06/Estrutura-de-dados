@@ -21,8 +21,6 @@ void adicionarNomes(){
         exit(1);
     }
     
-
-
     char *nomes[20] = {
         "Ana", "Carlos", "Beatriz", "João", "Mariana",
         "Lucas", "Camila", "Felipe", "Sofia", "Gabriel",
