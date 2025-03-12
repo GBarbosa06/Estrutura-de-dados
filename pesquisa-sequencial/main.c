@@ -36,3 +36,10 @@ N++;
 fclose(fp);
 return X;
 }
+
+char *getGolsMarcados(Equipe *Tabela, char *NomeEquipe) {
+for (int i = 0; i < 20; i++)
+if (strcmp(Tabela[i].Time, NomeEquipe) == 0)
+return Tabela[i].GP;
+return -1;
+}
