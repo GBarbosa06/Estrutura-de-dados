@@ -22,26 +22,17 @@ int main() {
 
     return 0;
 }
-equipe *lerDados(const char *nomeArquivo) {
-    FILE *fp = fopen(nomeArquivo, "r");
-    if (fp == NULL)
-    {
-        printf("ERRO: arquivo não pode ser aberto \n");
-        exit(1);
-    }
 
-    equipe *x = malloc(20* sizeof(equipe));
-    if (x==NULL)
-    {
-        printf("ERRO: Não foi possivel alocar memoria para o vator de equipes\n");
-        exit(1);
-    }
-    char L[256];
-    fscanf(fp, "%[^\n]", L); // pular a primeira linha
-
-    int n = 0;
-
-
-    
-    
+equipe* LerDados(const char *NomeArquivo) {
+FILE *fp = fopen(NomeArquivo, "r");
+equipe *X = malloc(20 * sizeof(equipe));
+int N = 0;
+char Cabecalho[64];
+fscanf(fp, "%s", Cabecalho);
+while (fscanf(fp,"%d;%[^;];%[^;];%d;%d;%d;%d;%d;%d;%d;%d;", &X[N].Posicao, X[N].Estado, X[N].Time, &X[N].Pontos,&X[N].J,&X[N].V,&X[N].E,&X[N].D,&X[N].GP,&X[N].GC,&X[N].SD ) == 11) {
+X[N].Aproveitamento = 100 * (float) X[N].Pontos / (float) (3 * X[N].J);
+N++;
+}
+fclose(fp);
+return X;
 }
