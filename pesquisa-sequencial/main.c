@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+equipe* LerDados(const char *NomeArquivo);
+char *getGolsMarcados(equipe *Tabela, char *NomeEquipe);
+
 typedef struct {
     int Posicao;
     char Estado[32];
@@ -17,9 +20,10 @@ typedef struct {
     float Aproveitamento; // % de pontos conquistados em relação ao total de pontos disputados
 } equipe;
 
-
 int main() {
-
+    equipe = *dados = LerDados("tabela.csv");
+    int teste = getGolsMarcados(dados, "São Paulo");
+    printf("")
     return 0;
 }
 
@@ -37,9 +41,8 @@ fclose(fp);
 return X;
 }
 
-char *getGolsMarcados(Equipe *Tabela, char *NomeEquipe) {
+char *getGolsMarcados(equipe *Tabela, char *NomeEquipe) {
 for (int i = 0; i < 20; i++)
 if (strcmp(Tabela[i].Time, NomeEquipe) == 0)
 return Tabela[i].GP;
-return -1;
 }
