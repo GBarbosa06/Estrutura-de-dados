@@ -6,7 +6,7 @@ int temp = *a;
 *b = temp;
 }
 
-int particao(int V[], int esq, int dir){
+int partition(int V[], int esq, int dir){
     int Pivot = V[(esq + dir) / 2];
     int i = esq; // i: índice para percorrer subvetor da esquerda
     int j = dir; // j: índice para percorrer subvetor da direita
@@ -19,7 +19,7 @@ int particao(int V[], int esq, int dir){
             j--;
         }
     }
-    return (i); // i é a posição do pivô.
+    return i; // i é a posição do pivô.
 }
 
 void quicksort(int Vetor[], int esq, int dir) {
