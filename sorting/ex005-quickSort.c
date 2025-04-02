@@ -23,12 +23,12 @@ int partition(int V[], int esq, int dir){
 }
 
 void quicksort(int Vetor[], int esq, int dir) {
-if (esq < dir) {
-    // Encontre a posição do pivô
-    int p = partition(Vetor, esq, dir);
-    // Ordena os elementos antes e depois da partição
-    quicksort(Vetor, esq, p - 1);
-    quicksort(Vetor, p, dir);
+    if (esq < dir) {
+        // Encontre a posição do pivô
+        int p = partition(Vetor, esq, dir);
+        // Ordena os elementos antes e depois da partição
+        quicksort(Vetor, esq, p - 1);
+        quicksort(Vetor, p, dir);
     }
 }
 
