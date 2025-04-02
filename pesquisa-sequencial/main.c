@@ -23,7 +23,7 @@ typedef struct {
 int main() {
     equipe = *dados = LerDados("tabela.csv");
     int teste = getGolsMarcados(dados, "São Paulo");
-    printf("")
+    printf("");
     return 0;
 }
 
