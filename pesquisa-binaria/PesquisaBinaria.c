@@ -17,8 +17,7 @@ int pesquisaBinaria(int *V, int n, int chave){
 }
 
 int main() {
-int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-11, 12, 13, 15, 14, 15};
+int numeros[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
 int tamanho = sizeof(numeros) / sizeof(numeros[0]);
 int elemento = 15;
 int posicao = pesquisaBinaria(numeros, tamanho, elemento);
