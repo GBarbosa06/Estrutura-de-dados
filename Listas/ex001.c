@@ -30,6 +30,12 @@ lista * criarLista(int C){
     X->capacidade = C;
     X->tamanho = 0;
 
+    printf("%d \n", X);
+
     return X;
+
+}
+
+int main() {
 
 }
