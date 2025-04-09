@@ -44,6 +44,14 @@ void destruirLista(lista *L){
 }
 
 void inserirItem(lista *l, item i){
+    if (l->tamanho == l->capacidade)
+    {
+        printf("ERRO: a lista esta cheia");
+        return;
+    }
+
+    l->Array[l->tamanho] = i;
+    l->tamanho++;
     
 }
 
