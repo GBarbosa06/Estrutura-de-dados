@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 typedef struct
 {
@@ -30,12 +32,15 @@ lista * criarLista(int C){
     X->capacidade = C;
     X->tamanho = 0;
 
-    printf("%d \n", X);
+    printf("Endereco de memoria (em hexadecimal): %p \n", X);
 
     return X;
 
 }
 
 int main() {
+    lista * exemplo = criarLista(20);
+
+
 
 }
