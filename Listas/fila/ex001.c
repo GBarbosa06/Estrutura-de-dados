@@ -55,12 +55,30 @@ void inserirItem(lista *l, item i){
     
 }
 
+void imprimirLista(lista *l){
+    printf("Capacidade: %d \n", l->capacidade);
+    printf("Tamanho: %d \n", l->tamanho);
+    for (int i = 0; i < l->tamanho; i++)
+    {
+        printf("%d ", l->Array[i].chave);
+    }
+    
+}
+
 int main() {
     lista * exemplo = criarLista(20);
     printf("Endereco de memoria 2: %p \n", exemplo);
+    
     destruirLista(exemplo);
+    
     lista * exemplo2 = criarLista(20);
     printf("Endereco de memoria 3: %p \n", exemplo2);
+
+    item E1 = {10}; inserirItem(exemplo2, E1);
+    item E2 = {17}; inserirItem(exemplo2, E2);
+    item E3 = {22}; inserirItem(exemplo2, E3);
+
+    imprimirLista(exemplo2);
     
 
 }
