@@ -43,6 +43,10 @@ void destruirLista(lista *L){
     free(L);
 }
 
+void inserirItem(lista *l, item i){
+    
+}
+
 int main() {
     lista * exemplo = criarLista(20);
     printf("Endereco de memoria 2: %p \n", exemplo);
@@ -50,7 +54,5 @@ int main() {
     lista * exemplo2 = criarLista(20);
     printf("Endereco de memoria 3: %p \n", exemplo2);
     
-
-
 
 }
