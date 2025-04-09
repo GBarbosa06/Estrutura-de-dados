@@ -65,6 +65,19 @@ void imprimirLista(lista *l){
     
 }
 
+void removerItem(lista *l, int i) {
+    if (i < 0 || i >= l->tamanho) {
+    printf("Erro: Índice fora dos limites da l.\n");
+    return;
+    }
+    // Movendo os elementos subsequentes uma posição para a esquerda
+    for (int i = i; i < l->tamanho - 1; i++) {
+    l->Array[i] = l->Array[i + 1];
+    }
+    l->tamanho--;
+}
+
+
 int main() {
     lista * exemplo = criarLista(20);
     printf("Endereco de memoria 2: %p \n", exemplo);
@@ -78,16 +91,20 @@ int main() {
     item E2 = {17}; inserirItem(exemplo2, E2);
     item E3 = {22}; inserirItem(exemplo2, E3);
 
-   inserirItem(exemplo2, E1);
-   inserirItem(exemplo2, E1);
-   inserirItem(exemplo2, E1);
-   inserirItem(exemplo2, E1);
-   inserirItem(exemplo2, E2);
-   inserirItem(exemplo2, E2);
-   inserirItem(exemplo2, E2);
-   inserirItem(exemplo2, E2);
+    inserirItem(exemplo2, E1);
+    inserirItem(exemplo2, E1);
+    inserirItem(exemplo2, E1);
+    inserirItem(exemplo2, E1);
+    inserirItem(exemplo2, E2);
+    inserirItem(exemplo2, E2);
+    inserirItem(exemplo2, E2);
+    inserirItem(exemplo2, E2);
 
 
+    imprimirLista(exemplo2);
+
+    removerItem(exemplo2, 2);
+    
     imprimirLista(exemplo2);
     
 
