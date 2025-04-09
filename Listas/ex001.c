@@ -32,14 +32,24 @@ lista * criarLista(int C){
     X->capacidade = C;
     X->tamanho = 0;
 
-    printf("Endereco de memoria (em hexadecimal): %p \n", X);
+    //printf("Endereco de memoria (em hexadecimal): %p \n", X);
 
     return X;
 
 }
 
+void destruirLista(lista *L){
+    free(L->Array);
+    free(L);
+}
+
 int main() {
     lista * exemplo = criarLista(20);
+    printf("Endereco de memoria 2: %p \n", exemplo);
+    destruirLista(exemplo);
+    lista * exemplo2 = criarLista(20);
+    printf("Endereco de memoria 3: %p \n", exemplo2);
+    
 
 
 
