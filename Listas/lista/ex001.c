@@ -78,6 +78,16 @@ int main() {
     item E2 = {17}; inserirItem(exemplo2, E2);
     item E3 = {22}; inserirItem(exemplo2, E3);
 
+   inserirItem(exemplo2, E1);
+   inserirItem(exemplo2, E1);
+   inserirItem(exemplo2, E1);
+   inserirItem(exemplo2, E1);
+   inserirItem(exemplo2, E2);
+   inserirItem(exemplo2, E2);
+   inserirItem(exemplo2, E2);
+   inserirItem(exemplo2, E2);
+
+
     imprimirLista(exemplo2);
     
 
