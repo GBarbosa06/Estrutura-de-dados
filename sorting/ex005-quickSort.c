@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 void swap(int *a, int *b) {// Função para trocar dois elementos de um vetor
-int temp = *a;
-*a = *b;
-*b = temp;
-}
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    }
 
 int partition(int V[], int esq, int dir){
     int Pivot = V[(esq + dir) / 2];
