@@ -1,0 +1,5 @@
+Uma lista encadeada é uma coleção de elementos (nós), onde cada elemento guarda dois dados:
+    1. O valor (ou dado em si).
+    2. Um ponteiro para o próximo elemento da lista.
+
+Em uma array, os elementos ficam em posições fixas definidas pelo índice, em uma lista encadeada os elementos podem ficar espalhados, com uma ligação feita com ponteiros.
