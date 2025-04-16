@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-Item * criarItem(int chave);
-Item * criarLista (void);
-void inserirItem(Lista *l, Item i);
-
 typedef struct Item{
     int chave;
     struct Item *prox;
@@ -15,6 +11,11 @@ typedef struct Lista{
     Item * Inicio;
     int Tamanho;
 } Lista;
+
+Item * criarItem(int chave);
+Lista * criarLista ();
+void inserirItem(Lista *l, Item i);
+
 
 Item * criarItem(int chave) {
     Item *I = (Item *)malloc(sizeof(Item));
