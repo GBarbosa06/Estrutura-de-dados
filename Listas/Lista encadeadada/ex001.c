@@ -36,6 +36,13 @@ int main () {
 
     Item * E = E2;
     printf("%d\n", E->chave);
+    Item * aux = E->prox;
+    printf("%d\n", aux->chave);
+
+    free(E1);
+    free(E2);
+    free(E3);
+    free(E4);
 
     return 0;
 }
