@@ -7,6 +7,11 @@ typedef struct Item{
     struct Item *prox;
 } Item;
 
+typedef struct Lista{
+    Item * Inicio;
+    int Tamanho;
+} Lista;
+
 Item * criarItem(int chave) {
     Item *I = (Item *)malloc(sizeof(Item));
     if (I == NULL) {
@@ -18,7 +23,20 @@ Item * criarItem(int chave) {
     return I;
 }
 
+Lista * criarLista () {
+    Lista *L = (Lista *)malloc(sizeof(Lista));
+    if (L == NULL) {
+        printf("Erro ao alocar memória.\n");
+        exit(1);
+    }
+    L->Inicio = NULL;
+    L->Tamanho = 0;
+    return L;
+}
+
 int main () {
+
+
     Item * E1 = criarItem(15);
     Item * E2 = criarItem(47);
     Item * E3 = criarItem(25);
