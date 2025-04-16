@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+Item * criarItem(int chave);
+Item * criarLista (void);
+void inserirItem(Lista *l, Item i);
+
 typedef struct Item{
     int chave;
     struct Item *prox;
@@ -34,6 +38,14 @@ Lista * criarLista () {
     return L;
 }
 
+void inserirItem(Lista *l, Item i) {
+    Item *novo = criarItem(i.chave);
+    novo->prox = l->Inicio;
+    l->Inicio = novo;
+    l->Tamanho++;
+}
+
+
 int main () {
 
 
@@ -47,7 +59,7 @@ int main () {
     printf("Endereco de E3 = %p\n", E3);
     printf("Endereco de E4 = %p\n", E4);
 
-    E1->prox = E2;
+    /* E1->prox = E2;
     E2->prox = E3;
     E3->prox = E4;
     E4->prox = NULL;
@@ -55,7 +67,7 @@ int main () {
     Item * E = E2;
     printf("%d\n", E->chave);
     Item * aux = E->prox;
-    printf("%d\n", aux->chave);
+    printf("%d\n", aux->chave); */
 
     free(E1);
     free(E2);
