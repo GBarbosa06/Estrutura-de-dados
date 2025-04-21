@@ -27,5 +27,7 @@ int main () {
     if (strcmp(C1, "Birnin Zana")==0) Soma++; 
     NumTeste++; 
  
-    fprintf(Resposta, "\n\nATENÇÃO: Você acertou %d de %d itens. Logo, em 2.00 pontos, sua nota foi %.2f.\n", Soma, NumTeste, 2.0 * (float)Soma/(float)NumTeste); 
+    fprintf(Resposta, "\n\nATENÇÃO: Você acertou %d de %d itens. Logo, em 2.00 pontos, sua nota foi %.2f.\n", Soma, NumTeste, 2.0 * (float)Soma/(float)NumTeste);
+    
+    free(C1);
 }
