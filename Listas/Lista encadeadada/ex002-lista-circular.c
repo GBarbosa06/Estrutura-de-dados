@@ -54,3 +54,44 @@ void inserirItem(Lista *l, Item i) {
     }
     l->Tamanho++;
 }
+
+void imprimirLista(Lista *l) {
+    if (l->Inicio == NULL) {
+        printf("Lista vazia.\n");
+        return;
+    }
+    Item *temp = l->Inicio;
+    do {
+        printf("%d -> ", temp->chave);
+        temp = temp->prox;
+    } while (temp != l->Inicio);
+    printf("(início)\n");
+}
+
+int main () {
+    Item * E1 = criarItem(15);
+    Item * E2 = criarItem(47);
+    Item * E3 = criarItem(25);
+    Item * E4 = criarItem(31);
+
+    Lista * L = criarLista();
+    inserirItem(L, *E1);
+    inserirItem(L, *E2);
+    inserirItem(L, *E3);
+    inserirItem(L, *E4);
+
+    printf("Tamanho da lista = %d\n", L->Tamanho);
+    printf("Endereco de L = %p\n", L);
+
+    printf("\n");
+
+    printf("Endereco de E1 = %p\n", E1);
+    printf("Endereco de E2 = %p\n", E2);
+    printf("Endereco de E3 = %p\n", E3);
+    printf("Endereco de E4 = %p\n", E4);
+
+    printf("\nImprimindo lista circular:\n");
+    imprimirLista(L);
+
+    return 0;
+}
