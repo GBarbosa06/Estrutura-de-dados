@@ -15,6 +15,7 @@ typedef struct Lista{
 Item * criarItem(int chave);
 Lista * criarLista ();
 void inserirItem(Lista *l, Item i);
+void removerItem(Lista *l, Item i);
 void imprimirLista(Lista *l);
 
 Lista * criarLista () {
@@ -53,6 +54,35 @@ void inserirItem(Lista *l, Item i) {
         novo->prox = l->Inicio; // Faz o novo item apontar para o início
     }
     l->Tamanho++;
+}
+
+void removerItem(Lista *l, Item i) {
+    if (l->Inicio == NULL) {
+        printf("Lista vazia.\n");
+        return;
+    }
+    Item *temp = l->Inicio;
+    Item *anterior = NULL;
+    do {
+        if (temp->chave == i.chave) {
+            if (anterior == NULL) { // Removendo o primeiro item
+                Item *ultimo = l->Inicio;
+                while (ultimo->prox != l->Inicio) {
+                    ultimo = ultimo->prox;
+                }
+                ultimo->prox = temp->prox; // Atualiza o último item
+                l->Inicio = temp->prox; // Atualiza o início
+            } else {
+                anterior->prox = temp->prox; // Remove o item
+            }
+            free(temp);
+            l->Tamanho--;
+            return;
+        }
+        anterior = temp;
+        temp = temp->prox;
+    } while (temp != l->Inicio);
+    printf("Item não encontrado.\n");
 }
 
 void imprimirLista(Lista *l) {
