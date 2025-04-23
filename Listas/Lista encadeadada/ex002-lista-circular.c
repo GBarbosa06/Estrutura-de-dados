@@ -17,6 +17,16 @@ Lista * criarLista ();
 void inserirItem(Lista *l, Item i);
 void imprimirLista(Lista *l);
 
+Lista * criarLista () {
+    Lista *L = (Lista *)malloc(sizeof(Lista));
+    if (L == NULL) {
+        printf("Erro ao alocar memória.\n");
+        exit(1);
+    }
+    L->Inicio = NULL;
+    L->Tamanho = 0;
+    return L;
+}
 
 Item * criarItem(int chave) {
     Item *I = (Item *)malloc(sizeof(Item));
