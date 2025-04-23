@@ -38,3 +38,19 @@ Item * criarItem(int chave) {
     I->prox = NULL;
     return I;
 }
+
+void inserirItem(Lista *l, Item i) {
+    Item *novo = criarItem(i.chave);
+    if (l->Inicio == NULL) {
+        l->Inicio = novo;
+        novo->prox = novo; // Aponta para ele mesmo
+    } else {
+        Item *temp = l->Inicio;
+        while (temp->prox != l->Inicio) {
+            temp = temp->prox;
+        }
+        temp->prox = novo;
+        novo->prox = l->Inicio; // Faz o novo item apontar para o início
+    }
+    l->Tamanho++;
+}
