@@ -83,3 +83,23 @@ void freeList(DoublyLinkedList* list) {
     free(list);
 }
 
+int main() {
+    DoublyLinkedList* list = createList();
+
+    insertAtEnd(list, 1);
+    insertAtEnd(list, 2);
+    insertAtEnd(list, 3);
+    insertAtBeginning(list, 0);
+
+    printf("List: ");
+    printList(list);
+
+    deleteNode(list, list->head->next); // Delete the second node
+
+    printf("After deletion: ");
+    printList(list);
+
+    freeList(list);
+    return 0;
+}
+
