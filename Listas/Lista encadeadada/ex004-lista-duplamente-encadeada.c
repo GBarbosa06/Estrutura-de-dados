@@ -103,3 +103,4 @@ int main() {
     return 0;
 }
 
+// This code implements a doubly linked list in C. It includes functions to create the list, insert nodes at the end and beginning, delete a node, print the list, and free the list memory. The main function demonstrates these operations.
