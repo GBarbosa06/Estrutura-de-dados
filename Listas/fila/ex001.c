@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Estrutura do nó
-typedef struct Node {
+// Estrutura do item -> nó
+typedef struct Item {
     int dado;
-    struct Node* prox;
-} Node;
+    struct Item* prox;
+} Item;
 
 // Estrutura da fila
 typedef struct Fila {
-    Node* frente;
-    Node* tras;
+    Item* frente;
+    Item* tras;
 } Fila;
 
 // Função para criar a fila
@@ -28,7 +28,7 @@ int estaVazia(Fila* fila) {
 
 // adicionarAoFim (inserir no final)
 void adicionarAoFim(Fila* fila, int valor) {
-    Node* novo = (Node*)malloc(sizeof(Node));
+    Item* novo = (Item*)malloc(sizeof(Item));
     novo->dado = valor;
     novo->prox = NULL;
 
@@ -47,7 +47,7 @@ int TirarPrimeiro(Fila* fila) {
         return -1; // Valor de erro
     }
 
-    Node* temp = fila->frente;
+    Item* temp = fila->frente;
     int valor = temp->dado;
     fila->frente = fila->frente->prox;
 
@@ -60,8 +60,8 @@ int TirarPrimeiro(Fila* fila) {
 }
 
 // Mostrar a fila
-void mostrarFila(Fila* fila) {
-    Node* atual = fila->frente;
+void exibirFila(Fila* fila) {
+    Item* atual = fila->frente;
     printf("Fila: ");
     while (atual != NULL) {
         printf("%d ", atual->dado);
@@ -78,10 +78,10 @@ int main() {
     adicionarAoFim(minhaFila, 20);
     adicionarAoFim(minhaFila, 30);
 
-    mostrarFila(minhaFila);
+    exibirFila(minhaFila);
 
     printf("Removido: %d\n", TirarPrimeiro(minhaFila));
-    mostrarFila(minhaFila);
+    exibirFila(minhaFila);
 
     return 0;
 }
